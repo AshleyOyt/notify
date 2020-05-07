@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import InputLabel from '@material-ui/core/InputLabel';
+// import InputLabel from '@material-ui/core/InputLabel';
 import Typography from "@material-ui/core/Typography";
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
+// import Select from '@material-ui/core/Select';
+// import MenuItem from '@material-ui/core/MenuItem';
 import Grid from "@material-ui/core/Grid";
-import FormControl from '@material-ui/core/MenuItem';
+// import FormControl from '@material-ui/core/MenuItem';
 // import { withMetaMask, PropTypesMetaMaskObject } from "@daisypayments/react-metamask";
 
 import {
@@ -15,7 +15,7 @@ import {
 } from '@web3-react/injected-connector'
 import { UnsupportedChainIdError } from '@web3-react/core'
 
-import * as BN from 'bn.js';
+// import * as BN from 'bn.js';
 
 import { isAddress, toContract } from "./Notify";
 // import MetaMaskContext from "./metamask";
@@ -29,7 +29,7 @@ const injected = new InjectedConnector({
 })
 
 function getErrorMessage(error) {
-  if (error.message == 'No Ethereum provider was found on window.ethereum.') {
+  if (error.message === 'No Ethereum provider was found on window.ethereum.') {
     return 'No Ethereum browser extension detected, install MetaMask on desktop or visit from a dApp browser on mobile.'
   } else if (error instanceof UnsupportedChainIdError) {
     return "You're connected to an unsupported network. Please switch to Ropsten or Mainnet."
@@ -123,9 +123,9 @@ class MainPage extends Component {
   renderNotifyForm = () => {
     const { recipient, message } = this.state;
     const haveFields = (recipient && message);
-    const btnColor = (haveFields) ? 'cyan' : 'red';
+    const btnColor = (haveFields) ? 'rgb(81, 165, 198)' : '#8e8e8e';
     const validAddress = recipient && isAddress(recipient)
-    const recipientStyle = (recipient && !validAddress) ? {color: 'red'} : {}
+    const recipientStyle = (recipient && !validAddress) ? {color: '#a00000'} : {}
     return <Grid
       container
       spacing={2}
@@ -158,7 +158,7 @@ class MainPage extends Component {
           variant='outlined'
         />
       </Grid> */}
-      <Grid item xs={5}>
+      <Grid item xs={12}>
         <TextField
           id='message'
           placeholder="Message to send"
@@ -169,9 +169,9 @@ class MainPage extends Component {
           variant='outlined'
         />
       </Grid>
-      <Grid item xs={5}>
+      <Grid item xs={12}>
         <Button
-          style={{ width: 500, backgroundColor: btnColor }}
+          style={{ width: 500, backgroundColor: btnColor, color: 'white' }}
           size='large'
           disabled={!(haveFields && validAddress)}
           onClick={this.doNotify}

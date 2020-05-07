@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ropstenAddress = process.env.REACT_APP_ROPSTEN_NOTIFY_ADDRESS;
 const mainnetAddress = process.env.REACT_APP_MAINNET_NOTIFY_ADDRESS;
 // const testAddress = process.env.REACT_APP_NOTIFY_ADDRESS;
@@ -32,9 +30,9 @@ const notifyABI = [
 const toContract = async (web3) => {
 	const net = await web3.eth.net.getNetworkType();
 	let notifyAddress;
-	if (net == 'main') {
+	if (net === 'main') {
 		notifyAddress = mainnetAddress;
-	} else if (net == 'ropsten') {
+	} else if (net === 'ropsten') {
 		notifyAddress = ropstenAddress;
 	} else throw new Error('Not ropsten or mainnet')
 	console.log(`notify address: ${notifyAddress}`)

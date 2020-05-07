@@ -26,7 +26,8 @@ export default class App extends Component {
 
   render = () => {
     return (
-      <div className="main">
+      <div className="container">
+       <div className="main">
         <div className="banner">
         <Typography variant="h3">
           Welcome to Notify
@@ -52,12 +53,13 @@ export default class App extends Component {
         {/* <MetaMaskContext.Provider immediate>
           <MainPage />
         </MetaMaskContext.Provider> */}
+          </div>
         <div className="footer">
-          <Typography variant="h5">
+          {/* <Typography variant="h5"> */}
             Interested in using Notify for an application or service?
             <br />
-            We'd love to <a target='_blank' href="https://twitter.com/0xNow">hear from you!</a>
-          </Typography>
+             <a target='_blank' href="https://twitter.com/0xNow">We'd love to hear from you!</a>
+          {/* </Typography> */}
         </div>
       </div>
     );

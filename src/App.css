@@ -1,3 +1,18 @@
+html, body {
+  display: flex;
+  background: #eefbff; 
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
 .main {
   display: flex;
   flex-wrap: nowrap;
@@ -8,16 +23,16 @@
   padding: 0;
 }
 
-.main > .footer {
-  color: rgb(0, 0, 0);
+.footer {
+  color: #2083c0;
   text-align: center;
   margin: 0;
   margin-bottom: 50px;
-  margin-top: 250px;
+  /* margin-top: 250px; */
 }
 
-.main > .banner {
-  color: darkblue;
+.banner {
+  color: #2083c0;
   text-align: center;
   margin: 0;
   margin-bottom: 50px;
@@ -27,4 +42,9 @@
 .banner-msg {
   margin-top: 50px;
   width: 450px;
+}
+
+a {
+ color: #0e6090;
+ font-weight: bold;
 }
